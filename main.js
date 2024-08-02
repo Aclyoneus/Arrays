@@ -9,3 +9,19 @@ const edibles = [thingsInHome[0], thingsInHome[1], thingsInHome[5], thingsInGard
 console.log(
     `made out of wood: ${JSON.stringify(madeOutOfWood)}\n edibles: ${JSON.stringify(edibles)}`
 );
+
+// 2
+
+function getSmallestNumber(number) {
+    let smallestNumber = number[0];
+
+    for (i = 1; i < number.length; i++) {
+        if (number[i] < smallestNumber) {
+            return smallestNumber = number[i];
+        }
+    }
+    return smallestNumber;
+}
+
+console.log(getSmallestNumber([2, -5, 10, 1, 4])); // -5
+console.log(getSmallestNumber([200, 25, 4, 123, 87])); // 4
