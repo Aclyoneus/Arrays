@@ -65,3 +65,70 @@ console.log(getReversedString('Hello!'));
 console.log(getReversedString('Arrays'));
 
 // 5
+
+// 6
+
+function countLetters(string) {
+
+}
+
+const lettersObject = countLetters('The quick brown fox jumps over the lazy dog');
+
+console.log(lettersObject);
+
+// 7
+
+const peopleArray = [
+    {
+        name: 'Adam',
+        age: 20
+    },
+    {
+        name: 'Amanda',
+        age: 5
+    },
+    {
+        name: 'John',
+        age: 75
+    },
+    {
+        name: 'Dave',
+        age: 15
+    }
+]
+
+function getAgeDifference(peopleArray) {
+    function getYoungestPerson(peopleArray, age) {
+    }
+}
+
+getAgeDifference(peopleArray); // 70
+
+function getYoungestPerson(people) {
+    // ...
+}
+
+function getOldestPerson(people) {
+    // ...
+}
+
+function getAgeDifference(people) {
+    // ...
+}
+
+// 8 - codewars
+
+function getPositiveNumbersSum(numbersArray) {
+    let sum = 0;
+
+    for (i = 0; i < numbersArray.length; i++) {
+        if (numbersArray[i] > 0) {
+            sum = sum + numbersArray[i];
+        }
+    }
+    return sum;
+}
+
+console.log(getPositiveNumbersSum([1,-2,3,4,5]));
+
+// 9
