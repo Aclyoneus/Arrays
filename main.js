@@ -53,3 +53,15 @@ const squaredNumbers = getSquaredNumbers(numbers);
 console.log(squaredNumbers); // [1, 4, 9]
 console.log(numbers); // [1, 2, 3]
 console.log(numbers !== squaredNumbers); // true
+
+// 4
+
+function getReversedString(string) {
+    const stringSplitByCharacters = string.split('');
+    return stringSplitByCharacters.reverse();
+}
+
+console.log(getReversedString('Hello!'));
+console.log(getReversedString('Arrays'));
+
+// 5
