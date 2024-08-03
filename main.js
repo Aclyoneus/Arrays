@@ -12,16 +12,27 @@ console.log(
 
 // 2
 
-function getSmallestNumber(number) {
-    let smallestNumber = number[0];
+function getSmallestNumber(numbersArray) {
+    let smallestNumber = numbersArray[0];
 
-    for (i = 1; i < number.length; i++) {
-        if (number[i] < smallestNumber) {
-            return smallestNumber = number[i];
+    for (i = 1; i < numbersArray.length; i++) {
+        if (numbersArray[i] < smallestNumber) {
+            return smallestNumber = numbersArray[i];
         }
     }
     return smallestNumber;
 }
 
+function getSmallestNumber(numbersArray) {
+    return numbersArray.sort(
+        function (firstNumber, secondNumber) {
+            return firstNumber - secondNumber;
+        }
+    );
+}
+
 console.log(getSmallestNumber([2, -5, 10, 1, 4])); // -5
 console.log(getSmallestNumber([200, 25, 4, 123, 87])); // 4
+
+// 3
+
