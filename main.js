@@ -122,8 +122,10 @@ function getPositiveNumbersSum(numbersArray) {
     let sum = 0;
 
     for (i = 0; i < numbersArray.length; i++) {
-        if (numbersArray[i] > 0) {
-            sum = sum + numbersArray[i];
+        let currentNumber = numbersArray[i];
+
+        if (currentNumber > 0) {
+            sum = sum + currentNumber;
         }
     }
     return sum;
@@ -132,3 +134,15 @@ function getPositiveNumbersSum(numbersArray) {
 console.log(getPositiveNumbersSum([1,-2,3,4,5]));
 
 // 9
+
+function getSumOfSquaredNumbers(numbersArray){
+    let sum = 0
+
+    for (i = 0; i < numbersArray.length; i++) {
+        let currentnumber = numbersArray[i];
+        sum = sum + (currentnumber * currentnumber);
+    }
+    return sum;
+}
+
+console.log(getSumOfSquaredNumbers([1, 2, 3]));
