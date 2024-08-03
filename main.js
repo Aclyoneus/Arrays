@@ -36,3 +36,20 @@ console.log(getSmallestNumber([200, 25, 4, 123, 87])); // 4
 
 // 3
 
+function getSquaredNumbers(numbersArray) {
+    let squaredNumbers = [];
+
+    for (let i = 0; i < numbersArray.length; i++) {
+        squaredNumbers.push(numbersArray[i] * numbersArray[i]);
+    }
+    return squaredNumbers;
+}
+
+getSquaredNumbers([1, 2, 3, 4, 5]); // [1, 4, 9, 16, 25]
+getSquaredNumbers([6, 7, 8, 9, 10]); // [36, 49, 64, 81, 100]
+
+const numbers = [1, 2, 3];
+const squaredNumbers = getSquaredNumbers(numbers);
+console.log(squaredNumbers); // [1, 4, 9]
+console.log(numbers); // [1, 2, 3]
+console.log(numbers !== squaredNumbers); // true
