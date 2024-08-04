@@ -218,8 +218,8 @@ console.log(calculateNumbersInArraySum([]));
 
 // 17
 
-function calculateTwoArraysNumbersSum(numbersArrayOne, numbersArrayTwo) {
-    function calculateOneArrayNumbersSum(array) {
+function arrayPlusArray(numbersArrayOne, numbersArrayTwo) {
+    function getArraySum(array) {
         let singleArraySum = 0;
 
         for (let i = 0; i < array.length; i++) {
@@ -228,10 +228,10 @@ function calculateTwoArraysNumbersSum(numbersArrayOne, numbersArrayTwo) {
         return singleArraySum;
     }
 
-    const numbersArrayOneSum = calculateOneArrayNumbersSum(numbersArrayOne);
-    const numbersArrayTwoSum = calculateOneArrayNumbersSum(numbersArrayTwo);
+    const numbersArrayOneSum = getArraySum(numbersArrayOne);
+    const numbersArrayTwoSum = getArraySum(numbersArrayTwo);
 
     return numbersArrayOneSum + numbersArrayTwoSum;
 }
 
-console.log(calculateTwoArraysNumbersSum([1, 2, 3], [4, 5, 6]));
+console.log(arrayPlusArray([1, 2, 3], [4, 5, 6]));
