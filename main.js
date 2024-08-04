@@ -64,9 +64,19 @@ function getReversedString(string) {
 console.log(getReversedString('Hello!'));
 console.log(getReversedString('Arrays'));
 
-// 5
+// 5 - UNFINISHED
 
-// 6
+function isPalindrome(text) {
+    const reversedText = text.split('').reverse().join('');
+
+    return text.toLowerCase() === reversedText.toLowerCase();
+}
+
+console.log(isPalindrome('Kayak'));
+console.log(isPalindrome('Hello!'));
+console.log(isPalindrome('Was it a cat I saw'));
+
+// 6 - UNFINISHED
 
 function countLetters(string) {
 
@@ -76,7 +86,7 @@ const lettersObject = countLetters('The quick brown fox jumps over the lazy dog'
 
 console.log(lettersObject);
 
-// 7
+// 7 - UNFINISHED
 
 const peopleArray = [
     {
@@ -97,24 +107,36 @@ const peopleArray = [
     }
 ]
 
-function getAgeDifference(peopleArray) {
-    function getYoungestPerson(peopleArray, age) {
-    }
-}
-
-getAgeDifference(peopleArray); // 70
-
 function getYoungestPerson(people) {
-    // ...
+   let youngestPerson = people[0].age;
+
+   for (i = 1; i < people.length; i++) {
+       if (people[i].age < youngestPerson) {
+           return youngestPerson = people[i].age;
+       }
+   }
+   return youngestPerson;
 }
 
 function getOldestPerson(people) {
-    // ...
+    let oldestPerson = people[0].age;
+
+    for (i = 1; i < people.length; i++) {
+        if (people[i].age > oldestPerson) {
+            return oldestPerson = people[i].age;
+        }
+    }
+    return oldestPerson;
 }
 
 function getAgeDifference(people) {
-    // ...
+    const oldestPersonAge = getOldestPerson(peopleArray);
+    const youngestPersonAge = getYoungestPerson(peopleArray);
+
+    return oldestPersonAge - youngestPersonAge;
 }
+
+console.log(getAgeDifference(peopleArray));
 
 // 8 - codewars
 
@@ -147,7 +169,7 @@ function getSumOfSquaredNumbers(numbersArray){
 
 console.log(getSumOfSquaredNumbers([1, 2, 3]));
 
-// 10
+// 10 - UNFINISHED
 
 // 11
 
