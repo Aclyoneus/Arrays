@@ -174,3 +174,16 @@ function getDigitizedAndReversedNumber(number) {
 }
 
 console.log(getDigitizedAndReversedNumber(35231));
+
+// 13
+
+function findNeedleIndex(haystackArray) {
+    const needle = 'needle';
+
+    for (i = 0; i < haystackArray.length; i++) {
+        const needleIndex = haystackArray.indexOf(needle);
+        return `found the needle at position ${needleIndex}`;
+    }
+}
+
+console.log(findNeedleIndex(['283497238987234', 'a dog', 'a cat', 'some random junk', 'a piece of hay', 'needle', 'something somebody lost a while ago']));
