@@ -260,3 +260,17 @@ function calculateAverage(marks) {
 
 console.log(calculateAverage([1, 2, 3, 4, 5]));
 console.log(calculateAverage([2, 2, 2, 2]));
+
+// 20
+
+function monkeyCount(numberOfMonkeys) {
+    let monkeysArray = [];
+
+    for (let i = 1; i <= numberOfMonkeys; i++) {
+        monkeysArray.push(i);
+    }
+    return monkeysArray;
+}
+
+console.log(monkeyCount(5));
+console.log(monkeyCount(10));
