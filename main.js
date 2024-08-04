@@ -197,12 +197,9 @@ console.log(getDoubledNumbers([1, 2, 3]));
 // 15
 
 function getInvertedNumbersArray(numbersArray) {
-    let invertedNumbers = [];
-
-    for (i = 0; i < numbersArray.length; i++) {
-        invertedNumbers.push(numbersArray[i] * -1);
-    }
-    return invertedNumbers;
+    return numbersArray.map(function(number) {
+        return number * -1;
+    });
 }
 
 console.log(getInvertedNumbersArray([1, -2, 3, -4, 5]));
