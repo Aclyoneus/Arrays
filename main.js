@@ -193,3 +193,16 @@ function getDoubledNumbers(numberArray) {
 }
 
 console.log(getDoubledNumbers([1, 2, 3]));
+
+// 15
+
+function getInvertedNumbersArray(numbersArray) {
+    let invertedNumbers = [];
+
+    for (i = 0; i < numbersArray.length; i++) {
+        invertedNumbers.push(numbersArray[i] * -1);
+    }
+    return invertedNumbers;
+}
+
+console.log(getInvertedNumbersArray([1, -2, 3, -4, 5]));
