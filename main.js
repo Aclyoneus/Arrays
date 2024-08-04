@@ -185,4 +185,11 @@ console.log(findNeedleIndex(['283497238987234', 'a dog', 'a cat', 'some random j
 
 // 14
 
+function getDoubledNumbers(numberArray) {
+    function doubledNumbers(number) {
+        return number * 2;
+    }
+    return numberArray.map(doubledNumbers);
+}
 
+console.log(getDoubledNumbers([1, 2, 3]));
