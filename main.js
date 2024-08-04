@@ -165,3 +165,12 @@ function countSheepsIfPresent(sheepArray) {
 }
 
 console.log(countSheepsIfPresent([undefined,null,false,true,true,false,null,undefined]));
+
+// 12
+
+function getDigitizedAndReversedNumber(number) {
+    const numberSplit = number.toString().split('');
+    return numberSplit.reverse().map(Number);
+}
+
+console.log(getDigitizedAndReversedNumber(35231));
