@@ -249,3 +249,14 @@ function countSheep(number) {
 
 console.log(countSheep(0));
 console.log(countSheep(2));
+
+// 19
+
+function calculateAverage(marks) {
+    return Math.floor((marks.reduce(function sumOfMarks(currentSum, mark) {
+        return currentSum + mark;
+    }) / marks.length));
+}
+
+console.log(calculateAverage([1, 2, 3, 4, 5]));
+console.log(calculateAverage([2, 2, 2, 2]));
