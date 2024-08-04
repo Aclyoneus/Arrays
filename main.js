@@ -235,3 +235,17 @@ function arrayPlusArray(numbersArrayOne, numbersArrayTwo) {
 }
 
 console.log(arrayPlusArray([1, 2, 3], [4, 5, 6]));
+
+// 18
+
+function countSheep(number) {
+    let countSheepText = ''
+
+    for (i = 1; i <= number; i++) {
+        countSheepText = countSheepText +`${i} sheep...`;
+    }
+    return countSheepText;
+}
+
+console.log(countSheep(0));
+console.log(countSheep(2));
