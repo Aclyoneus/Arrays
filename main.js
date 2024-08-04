@@ -136,7 +136,7 @@ console.log(getPositiveNumbersSum([1,-2,3,4,5]));
 // 9
 
 function getSumOfSquaredNumbers(numbersArray){
-    let sum = 0
+    let sum = 0;
 
     for (i = 0; i < numbersArray.length; i++) {
         let currentnumber = numbersArray[i];
@@ -146,3 +146,22 @@ function getSumOfSquaredNumbers(numbersArray){
 }
 
 console.log(getSumOfSquaredNumbers([1, 2, 3]));
+
+// 10
+
+// 11
+
+function countSheepsIfPresent(sheepArray) {
+    let sumOfSheepsPresent = 0;
+
+    for (i = 0; i < sheepArray.length; i++) {
+        let isCurrentSheepPresent = sheepArray[i];
+
+        if (isCurrentSheepPresent === true) {
+            sumOfSheepsPresent = sumOfSheepsPresent + 1;
+        }
+    }
+    return sumOfSheepsPresent;
+}
+
+console.log(countSheepsIfPresent([undefined,null,false,true,true,false,null,undefined]));
