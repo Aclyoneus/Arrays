@@ -203,3 +203,15 @@ function getInvertedNumbersArray(numbersArray) {
 }
 
 console.log(getInvertedNumbersArray([1, -2, 3, -4, 5]));
+
+// 16
+
+function calculateNumbersInArraySum(numbersArray) {
+    "use strict";
+    return numbersArray.reduce(function(currentSum, number) {
+        return currentSum + number;
+    }, 0);
+}
+
+console.log(calculateNumbersInArraySum([1, 5.2, 4, 0, -1]));
+console.log(calculateNumbersInArraySum([]));
