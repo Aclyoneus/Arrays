@@ -64,12 +64,13 @@ function getReversedString(string) {
 console.log(getReversedString('Hello!'));
 console.log(getReversedString('Arrays'));
 
-// 5 - UNFINISHED
+// 5
 
 function isPalindrome(text) {
-    const reversedText = text.split('').reverse().join('');
+    const textWithoutSpecialCharacters = text.replace(/[^a-z]/gi, '').toLowerCase();
+    const reversedText = textWithoutSpecialCharacters.split('').reverse().join('');
 
-    return text.toLowerCase() === reversedText.toLowerCase();
+    return textWithoutSpecialCharacters === reversedText;
 }
 
 console.log(isPalindrome('Kayak'));
@@ -86,7 +87,7 @@ const lettersObject = countLetters('The quick brown fox jumps over the lazy dog'
 
 console.log(lettersObject);
 
-// 7 - UNFINISHED
+// 7
 
 const peopleArray = [
     {
