@@ -77,10 +77,22 @@ console.log(isPalindrome('Kayak'));
 console.log(isPalindrome('Hello!'));
 console.log(isPalindrome('Was it a cat I saw'));
 
-// 6 - UNFINISHED
+// 6
 
 function countLetters(string) {
+    const letterCount = {};
+    const splittedAndCleanedString = string.replace(/[^a-zA-Z]/g, '').toLowerCase().split('');
 
+    for (i = 0; i < splittedAndCleanedString.length; i++) {
+        const letter = splittedAndCleanedString[i];
+
+        if (letterCount[letter] > 0) {
+            letterCount[letter] = letterCount[letter] + 1;
+        } else {
+            letterCount[letter] = 1;
+        }
+    }
+    return letterCount;
 }
 
 const lettersObject = countLetters('The quick brown fox jumps over the lazy dog');
