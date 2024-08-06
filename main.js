@@ -182,7 +182,15 @@ function getSumOfSquaredNumbers(numbersArray){
 
 console.log(getSumOfSquaredNumbers([1, 2, 3]));
 
-// 10 - UNFINISHED
+// 10
+
+function getNameInitials(name){
+    const nameConvertedToArray = name.toUpperCase().split(' ');
+    return `${nameConvertedToArray[0][0]}.${nameConvertedToArray[1][0]}`;
+}
+
+console.log(getNameInitials('Sam Harris'));
+console.log(getNameInitials('Anita Włodarczyk'));
 
 // 11
 
