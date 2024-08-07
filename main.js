@@ -14,21 +14,22 @@ console.log(
 
 function getSmallestNumber(numbersArray) {
     let smallestNumber = numbersArray[0];
-
-    for (i = 1; i < numbersArray.length; i++) {
-        if (numbersArray[i] < smallestNumber) {
-            return smallestNumber = numbersArray[i];
+    for (let i = 1; i < numbersArray.length; i++) {
+        let currentNumber = numbersArray[i];
+        if (currentNumber < smallestNumber) {
+            return smallestNumber = currentNumber;
         }
     }
     return smallestNumber;
 }
 
 function getSmallestNumber(numbersArray) {
-    return numbersArray.sort(
+    const sortedArray = numbersArray.sort(
         function (firstNumber, secondNumber) {
             return firstNumber - secondNumber;
         }
     );
+    return sortedArray[0];
 }
 
 console.log(getSmallestNumber([2, -5, 10, 1, 4])); // -5
@@ -38,27 +39,27 @@ console.log(getSmallestNumber([200, 25, 4, 123, 87])); // 4
 
 function getSquaredNumbers(numbersArray) {
     let squaredNumbers = [];
-
     for (let i = 0; i < numbersArray.length; i++) {
-        squaredNumbers.push(numbersArray[i] * numbersArray[i]);
+        let currentNumber = numbersArray[i];
+        squaredNumbers.push(currentNumber * currentNumber);
     }
     return squaredNumbers;
 }
 
-getSquaredNumbers([1, 2, 3, 4, 5]); // [1, 4, 9, 16, 25]
-getSquaredNumbers([6, 7, 8, 9, 10]); // [36, 49, 64, 81, 100]
+getSquaredNumbers([1, 2, 3, 4, 5]);
+getSquaredNumbers([6, 7, 8, 9, 10]);
 
 const numbers = [1, 2, 3];
 const squaredNumbers = getSquaredNumbers(numbers);
-console.log(squaredNumbers); // [1, 4, 9]
-console.log(numbers); // [1, 2, 3]
-console.log(numbers !== squaredNumbers); // true
+console.log(squaredNumbers);
+console.log(numbers);
+console.log(numbers !== squaredNumbers);
 
 // 4
 
 function getReversedString(string) {
     const stringSplitByCharacters = string.split('');
-    return stringSplitByCharacters.reverse();
+    return stringSplitByCharacters.reverse().join('');
 }
 
 console.log(getReversedString('Hello!'));
@@ -69,7 +70,6 @@ console.log(getReversedString('Arrays'));
 function isPalindrome(text) {
     const textWithoutSpecialCharacters = text.replace(/[^a-z]/gi, '').toLowerCase();
     const reversedText = textWithoutSpecialCharacters.split('').reverse().join('');
-
     return textWithoutSpecialCharacters === reversedText;
 }
 
@@ -77,15 +77,14 @@ console.log(isPalindrome('Kayak'));
 console.log(isPalindrome('Hello!'));
 console.log(isPalindrome('Was it a cat I saw'));
 
-// 6
+// 6 - TO FINISH LATER _____________________________________________________________________
 
 function countLetters(string) {
     const letterCount = {};
-    const splittedAndCleanedString = string.replace(/[^a-zA-Z]/g, '').toLowerCase().split('');
+    const splitAndCleanedString = string.replace(/[^a-zA-Z]/g, '').toLowerCase().split('');
 
-    for (i = 0; i < splittedAndCleanedString.length; i++) {
-        const letter = splittedAndCleanedString[i];
-
+    for (let i = 0; i < splitAndCleanedString.length; i++) {
+        const letter = splitAndCleanedString[i];
         if (letterCount[letter] > 0) {
             letterCount[letter] = letterCount[letter] + 1;
         } else {
@@ -99,7 +98,7 @@ const lettersObject = countLetters('The quick brown fox jumps over the lazy dog'
 
 console.log(lettersObject);
 
-// 7
+// 7 - ACTION NEEDED - functions without AGE in exercise description! __________________
 
 const peopleArray = [
     {
@@ -120,31 +119,29 @@ const peopleArray = [
     }
 ]
 
-function getYoungestPerson(people) {
-   let youngestPerson = people[0].age;
-
-   for (i = 1; i < people.length; i++) {
-       if (people[i].age < youngestPerson) {
-           return youngestPerson = people[i].age;
+function getYoungestPersonAge(people) {
+   let youngestPersonAge = people[0].age;
+   for (let i = 1; i < people.length; i++) {
+       if (people[i].age < youngestPersonAge) {
+           youngestPersonAge = people[i].age;
        }
    }
-   return youngestPerson;
+   return youngestPersonAge;
 }
 
-function getOldestPerson(people) {
-    let oldestPerson = people[0].age;
-
-    for (i = 1; i < people.length; i++) {
-        if (people[i].age > oldestPerson) {
-            return oldestPerson = people[i].age;
+function getOldestPersonAge(people) {
+    let oldestPersonAge = people[0].age;
+    for (let i = 1; i < people.length; i++) {
+        if (people[i].age > oldestPersonAge) {
+            oldestPersonAge = people[i].age;
         }
     }
-    return oldestPerson;
+    return oldestPersonAge;
 }
 
 function getAgeDifference(people) {
-    const oldestPersonAge = getOldestPerson(peopleArray);
-    const youngestPersonAge = getYoungestPerson(peopleArray);
+    const oldestPersonAge = getOldestPersonAge(peopleArray);
+    const youngestPersonAge = getYoungestPersonAge(peopleArray);
 
     return oldestPersonAge - youngestPersonAge;
 }
@@ -155,10 +152,8 @@ console.log(getAgeDifference(peopleArray));
 
 function getPositiveNumbersSum(numbersArray) {
     let sum = 0;
-
-    for (i = 0; i < numbersArray.length; i++) {
-        let currentNumber = numbersArray[i];
-
+    for (let i = 0; i < numbersArray.length; i++) {
+        const currentNumber = numbersArray[i];
         if (currentNumber > 0) {
             sum = sum + currentNumber;
         }
@@ -172,10 +167,9 @@ console.log(getPositiveNumbersSum([1,-2,3,4,5]));
 
 function getSumOfSquaredNumbers(numbersArray){
     let sum = 0;
-
-    for (i = 0; i < numbersArray.length; i++) {
-        let currentnumber = numbersArray[i];
-        sum = sum + (currentnumber * currentnumber);
+    for (let i = 0; i < numbersArray.length; i++) {
+        const currentNumber = numbersArray[i];
+        sum = sum + (currentNumber * currentNumber);
     }
     return sum;
 }
@@ -186,7 +180,10 @@ console.log(getSumOfSquaredNumbers([1, 2, 3]));
 
 function getNameInitials(name){
     const nameConvertedToArray = name.toUpperCase().split(' ');
-    return `${nameConvertedToArray[0][0]}.${nameConvertedToArray[1][0]}`;
+    const firstName = nameConvertedToArray[0][0];
+    const lastName = nameConvertedToArray[1][0];
+
+    return `${firstName}.${lastName}`;
 }
 
 console.log(getNameInitials('Sam Harris'));
@@ -194,39 +191,42 @@ console.log(getNameInitials('Anita Włodarczyk'));
 
 // 11
 
-function countSheepsIfPresent(sheepArray) {
-    let sumOfSheepsPresent = 0;
-
-    for (i = 0; i < sheepArray.length; i++) {
-        let isCurrentSheepPresent = sheepArray[i];
-
-        if (isCurrentSheepPresent === true) {
-            sumOfSheepsPresent = sumOfSheepsPresent + 1;
+function countSheepIfPresent(sheepArray) {
+    let sumOfSheepPresent = 0;
+    for (let i = 0; i < sheepArray.length; i++) {
+        const isCurrentSheepPresent = sheepArray[i];
+        if (isCurrentSheepPresent) {
+            sumOfSheepPresent = sumOfSheepPresent + 1;
         }
     }
-    return sumOfSheepsPresent;
+    return sumOfSheepPresent;
 }
 
-console.log(countSheepsIfPresent([undefined,null,false,true,true,false,null,undefined]));
+console.log(countSheepIfPresent([undefined,null,false,true,true,false,null,undefined]));
 
-// 12
+// 12 - HOW TO MAKE FOR INSTEAD OF MAP?????????????
 
 function getDigitizedAndReversedNumber(number) {
     const numberSplit = number.toString().split('');
-    return numberSplit.reverse().map(Number);
+    const reversedArray = numberSplit.reverse();
+
+    for (let i = 0; i < reversedArray.length; i++) {
+
+    }
 }
 
 console.log(getDigitizedAndReversedNumber(35231));
+console.log(getDigitizedAndReversedNumber(0));
 
 // 13
 
 function findNeedleIndex(haystackArray) {
-    return "found the needle at position " + haystackArray.indexOf("needle");
+    return 'found the needle at position ' + haystackArray.indexOf('needle');
 }
 
 console.log(findNeedleIndex(['283497238987234', 'a dog', 'a cat', 'some random junk', 'a piece of hay', 'needle', 'something somebody lost a while ago']));
 
-// 14
+// 14 ---- NEXT ONE TO FINISH ______________________________________________________________________
 
 function getDoubledNumbers(numberArray) {
     function doubledNumbers(number) {
