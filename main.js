@@ -32,8 +32,8 @@ function getSmallestNumber(numbersArray) {
     return sortedArray[0];
 }
 
-console.log(getSmallestNumber([2, -5, 10, 1, 4])); // -5
-console.log(getSmallestNumber([200, 25, 4, 123, 87])); // 4
+console.log(getSmallestNumber([2, -5, 10, 1, 4]));
+console.log(getSmallestNumber([200, 25, 4, 123, 87]));
 
 // 3
 
@@ -77,19 +77,15 @@ console.log(isPalindrome('Kayak'));
 console.log(isPalindrome('Hello!'));
 console.log(isPalindrome('Was it a cat I saw'));
 
-// 6 - TO FINISH LATER _____________________________________________________________________
+// 6
 
 function countLetters(string) {
     const letterCount = {};
     const splitAndCleanedString = string.replace(/[^a-zA-Z]/g, '').toLowerCase().split('');
-
     for (let i = 0; i < splitAndCleanedString.length; i++) {
         const letter = splitAndCleanedString[i];
-        if (letterCount[letter] > 0) {
-            letterCount[letter] = letterCount[letter] + 1;
-        } else {
-            letterCount[letter] = 1;
-        }
+        const currentValue = letterCount[letter] || 0;
+        letterCount[letter] = currentValue + 1;
     }
     return letterCount;
 }
@@ -98,7 +94,7 @@ const lettersObject = countLetters('The quick brown fox jumps over the lazy dog'
 
 console.log(lettersObject);
 
-// 7 - ACTION NEEDED - functions without AGE in exercise description! __________________
+// 7
 
 const peopleArray = [
     {
@@ -119,36 +115,35 @@ const peopleArray = [
     }
 ]
 
-function getYoungestPersonAge(people) {
-   let youngestPersonAge = people[0].age;
+function getYoungestPerson(people) {
+   let youngestPerson = people[0];
    for (let i = 1; i < people.length; i++) {
-       if (people[i].age < youngestPersonAge) {
-           youngestPersonAge = people[i].age;
+       if (people[i].age < youngestPerson.age) {
+           youngestPerson = people[i];
        }
    }
-   return youngestPersonAge;
+   return youngestPerson;
 }
 
-function getOldestPersonAge(people) {
-    let oldestPersonAge = people[0].age;
+function getOldestPerson(people) {
+    let oldestPerson = people[0];
     for (let i = 1; i < people.length; i++) {
-        if (people[i].age > oldestPersonAge) {
-            oldestPersonAge = people[i].age;
+        if (people[i].age > oldestPerson.age) {
+            oldestPerson = people[i];
         }
     }
-    return oldestPersonAge;
+    return oldestPerson;
 }
 
 function getAgeDifference(people) {
-    const oldestPersonAge = getOldestPersonAge(peopleArray);
-    const youngestPersonAge = getYoungestPersonAge(peopleArray);
-
-    return oldestPersonAge - youngestPersonAge;
+    const oldestPerson = getOldestPerson(peopleArray);
+    const youngestPerson = getYoungestPerson(peopleArray);
+    return oldestPerson.age - youngestPerson.age;
 }
 
 console.log(getAgeDifference(peopleArray));
 
-// 8 - codewars
+// 8
 
 function getPositiveNumbersSum(numbersArray) {
     let sum = 0;
@@ -182,7 +177,6 @@ function getNameInitials(name){
     const nameConvertedToArray = name.toUpperCase().split(' ');
     const firstName = nameConvertedToArray[0][0];
     const lastName = nameConvertedToArray[1][0];
-
     return `${firstName}.${lastName}`;
 }
 
@@ -204,15 +198,17 @@ function countSheepIfPresent(sheepArray) {
 
 console.log(countSheepIfPresent([undefined,null,false,true,true,false,null,undefined]));
 
-// 12 - HOW TO MAKE FOR INSTEAD OF MAP?????????????
+// 12
 
 function getDigitizedAndReversedNumber(number) {
-    const numberSplit = number.toString().split('');
-    const reversedArray = numberSplit.reverse();
-
+    const numberSplitArray = number.toString().split('');
+    const reversedArray = numberSplitArray.reverse();
+    let digitizedNumbersArray = [];
     for (let i = 0; i < reversedArray.length; i++) {
-
+        const currentValue = reversedArray[i];
+        digitizedNumbersArray.push(Number(currentValue));
     }
+    return digitizedNumbersArray;
 }
 
 console.log(getDigitizedAndReversedNumber(35231));
@@ -226,13 +222,15 @@ function findNeedleIndex(haystackArray) {
 
 console.log(findNeedleIndex(['283497238987234', 'a dog', 'a cat', 'some random junk', 'a piece of hay', 'needle', 'something somebody lost a while ago']));
 
-// 14 ---- NEXT ONE TO FINISH ______________________________________________________________________
+// 14
 
 function getDoubledNumbers(numberArray) {
-    function doubledNumbers(number) {
-        return number * 2;
+    const doubledNumbersArray = [];
+    for (let i = 0; i < numberArray.length; i++) {
+        const currentNumber = numberArray[i];
+        doubledNumbersArray.push(currentNumber * 2);
     }
-    return numberArray.map(doubledNumbers);
+    return doubledNumbersArray;
 }
 
 console.log(getDoubledNumbers([1, 2, 3]));
@@ -240,9 +238,12 @@ console.log(getDoubledNumbers([1, 2, 3]));
 // 15
 
 function getInvertedNumbersArray(numbersArray) {
-    return numbersArray.map(function(number) {
-        return number * -1;
-    });
+    const invertedNumbersArray = [];
+    for (let i = 0; i < numbersArray.length; i++) {
+        const currentNumber = numbersArray[i];
+        invertedNumbersArray.push(currentNumber * -1);
+    }
+    return invertedNumbersArray;
 }
 
 console.log(getInvertedNumbersArray([1, -2, 3, -4, 5]));
@@ -250,10 +251,14 @@ console.log(getInvertedNumbersArray([1, -2, 3, -4, 5]));
 // 16
 
 function calculateNumbersInArraySum(numbersArray) {
-    "use strict";
-    return numbersArray.reduce(function calculateReducedArrayNumbers(currentSum, number) {
-        return currentSum + number;
-    }, 0);
+    let sum = 0
+    for (let i = 0; i < numbersArray.length; i++) {
+        const currentNumber = numbersArray[i];
+        if (numbersArray.length > 0) {
+            sum = sum + currentNumber;
+        }
+    }
+    return sum;
 }
 
 console.log(calculateNumbersInArraySum([1, 5.2, 4, 0, -1]));
@@ -261,19 +266,17 @@ console.log(calculateNumbersInArraySum([]));
 
 // 17
 
-function arrayPlusArray(numbersArrayOne, numbersArrayTwo) {
-    function getArraySum(array) {
-        let singleArraySum = 0;
-
-        for (let i = 0; i < array.length; i++) {
-            singleArraySum = singleArraySum + array[i];
-        }
-        return singleArraySum;
+function getArraySum(array) {
+    let singleArraySum = 0;
+    for (let i = 0; i < array.length; i++) {
+        singleArraySum = singleArraySum + array[i];
     }
+    return singleArraySum;
+}
 
+function arrayPlusArray(numbersArrayOne, numbersArrayTwo) {
     const numbersArrayOneSum = getArraySum(numbersArrayOne);
     const numbersArrayTwoSum = getArraySum(numbersArrayTwo);
-
     return numbersArrayOneSum + numbersArrayTwoSum;
 }
 
@@ -282,9 +285,8 @@ console.log(arrayPlusArray([1, 2, 3], [4, 5, 6]));
 // 18
 
 function countSheep(number) {
-    let countSheepText = ''
-
-    for (i = 1; i <= number; i++) {
+    let countSheepText = '';
+    for (let i = 1; i <= number; i++) {
         countSheepText = countSheepText +`${i} sheep...`;
     }
     return countSheepText;
@@ -296,9 +298,12 @@ console.log(countSheep(2));
 // 19
 
 function calculateAverage(marks) {
-    return Math.floor((marks.reduce(function sumOfMarks(currentSum, mark) {
-        return currentSum + mark;
-    }) / marks.length));
+    let sum = 0
+    for (let i = 0; i < marks.length; i++) {
+        const currentMark = marks[i];
+        sum = sum + currentMark;
+    }
+    return Math.floor(sum / marks.length);
 }
 
 console.log(calculateAverage([1, 2, 3, 4, 5]));
@@ -307,8 +312,7 @@ console.log(calculateAverage([2, 2, 2, 2]));
 // 20
 
 function monkeyCount(numberOfMonkeys) {
-    let monkeysArray = [];
-
+    const monkeysArray = [];
     for (let i = 1; i <= numberOfMonkeys; i++) {
         monkeysArray.push(i);
     }
